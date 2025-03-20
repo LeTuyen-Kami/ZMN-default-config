@@ -1,0 +1,16 @@
+{
+  "app": {
+    "title": "Dapharco",
+    "headerTitle": "Dapharco",
+    "headerColor": "#1843EF",
+    "textColor": "white",
+    "leftButton": "back",
+    "statusBar": "normal",
+    "actionBarHidden": false,
+    "hideAndroidBottomNavigationBar": false,
+    "hideIOSSafeAreaBottom": false
+  },
+  "listCSS": ["assets/index-mcdKKMzB.css"],
+  "listSyncJS": ["assets/index.ms3z2G7W.module.js"],
+  "listAsyncJS": []
+}

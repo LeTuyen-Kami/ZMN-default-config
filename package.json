@@ -1,0 +1,51 @@
+{
+  "name": "dapharco-client",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --mode dev",
+    "build": "tsc -b && vite build",
+    "build:dev": "tsc -b && vite build --mode dev",
+    "build:prod": "tsc -b && vite build --mode production",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "merge:dev": "sh merge-env.sh dev",
+    "merge:prod": "sh merge-env.sh production",
+    "build:deploy": "bun run merge:dev && tsc -b && vite build --mode dev && sh update_app_config.sh && expect auto_deploy_zmp.exp",
+    "build:deploy_test": "bun run merge:dev && tsc -b && vite build --mode dev && sh update_app_config.sh && expect auto_deploy_zmp_test.exp",
+    "build:deploy_prod": "bun run merge:prod && tsc -b && vite build --mode production && sh update_app_config.sh && expect auto_deploy_zmp_prod.exp",
+    "test": "bun run merge:prod && vite --mode production"
+  },
+  "dependencies": {
+    "@tanstack/query-sync-storage-persister": "^5.69.0",
+    "@tanstack/react-form": "^1.1.0",
+    "@tanstack/react-query": "^5.69.0",
+    "axios": "^1.8.4",
+    "dayjs": "^1.11.13",
+    "jotai": "^2.12.2",
+    "lodash": "^4.17.21",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.4.0",
+    "zmp-sdk": "^2.44.3-6"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.21.0",
+    "@types/lodash": "^4.17.16",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react": "^4.3.4",
+    "@vitejs/plugin-react-swc": "^3.8.1",
+    "eslint": "^9.21.0",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^15.15.0",
+    "typescript": "~5.7.2",
+    "typescript-eslint": "^8.24.1",
+    "unocss": "^66.1.0-beta.6",
+    "vite": "5.2.0",
+    "vite-tsconfig-paths": "^5.1.4",
+    "zmp-vite-plugin": "^1.1.6"
+  }
+}

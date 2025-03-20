@@ -1,0 +1,23 @@
+#!/usr/bin/expect
+
+set timeout -1
+spawn zmp deploy
+
+# Câu 1: Nhấn Enter để chọn "Deploy your existing project"
+expect "Deploy your existing project"
+send "\r"
+
+# Câu 2: Input "dist" và nhấn Enter
+expect "Where is your dist folder?"
+send "dist\r"
+
+# Câu 3: Nhấn Enter để chọn "Development"
+expect "What version status are you deploying?"
+send "\033\[B\r"
+
+# Câu 4: Điền vào timestamp hiện tại và nhấn Enter
+set timestamp [clock format [clock seconds] -format "%Y-%m-%d %H:%M:%S"]
+expect "Description:"
+send "Prod at $timestamp\r"
+
+expect eof

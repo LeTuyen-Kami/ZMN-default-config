@@ -1,0 +1,24 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+## General Guidelines
+	⁃ Generate code in TypeScript with ES6+ syntax.
+	⁃ Format responses with clear comments explaining each step.
+## File Size Constraints
+	⁃ Keep all source code files under 200 lines to optimize Al context and prevent errors.
+	⁃ Use modularization (e.g., split large functions into smaller files) if a file exceeds 200 lines.
+	⁃ Prioritize generating code that adheres to this limit, suggesting refactoring if necessary.
+## Quality Requirements
+	⁃ All code must pass an ESLint rule enforcing a max-lines-per-file of 200.
+	⁃ Avoid generating or suggesting changes to files larger than 200 lines without explicit user approval.
+
+## Library Using
+ 	- "@tanstack/react-query": "^5.69.0",
+    - "axios": "^1.8.4",
+    - "dayjs": "^1.11.13",
+    - "jotai": "^2.12.2",
+    - "lodash": "^4.17.21",
+    - "react": "^19.0.0",
